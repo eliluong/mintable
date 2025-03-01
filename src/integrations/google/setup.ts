@@ -64,7 +64,8 @@ export default async () => {
             })
 
             const google = new GoogleIntegration(getConfig())
-            open(google.getAuthURL())
+            const authURL = google.getAuthURL()
+            console.log(`Please open this URL in your browser: ${authURL}`)
 
             console.log('\n\t5. A link will open in your browser asking you to sign in')
             console.log('\t6. Sign in with the account you want to use with Mintable')
