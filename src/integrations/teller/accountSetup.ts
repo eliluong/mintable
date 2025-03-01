@@ -17,8 +17,10 @@ export default () => {
             const tellerConfig = config.integrations[IntegrationId.Teller] as TellerConfig
             const teller = new TellerIntegration(config)
 
+            const url = `http://your-ip:8000?tellerAppId=${tellerConfig.appId}`
+            console.log(`Please open this URL in your browser: ${url}`)
+
             logInfo('Account setup in progress.')
-            open(`http://localhost:8000?tellerAppId=${tellerConfig.appId}`)
             teller.accountSetup()
               .then(() => {
                 logInfo('Successfully set up Teller Account(s).')

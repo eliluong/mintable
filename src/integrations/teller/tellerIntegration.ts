@@ -135,7 +135,7 @@ export class TellerIntegration {
 
             server = http
                 .createServer(app)
-                .listen('8000')
+                .listen(8000, '0.0.0.0')
         })
     }
 
